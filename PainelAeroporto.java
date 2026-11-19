@@ -130,4 +130,41 @@ public class PainelAeroporto {
         System.out.println("Sucesso: Status do voo " + v.getNumero() + " atualizado para: " + proximo);
         return true;
     }
+    // 5.5 Excluir um voo (Apenas se o status for DECOLOU)
+    public boolean excluirVoo(String numero) {
+        Voo v = buscarVoo(numero);
+        if (v == null) {
+            System.out.println("Erro: Voo não encontrado.");
+            return false;
+        }
+
+        if (!v.getStatus().equalsIgnoreCase("DECOLOU")) {
+            System.out.println("Erro: Exclusão não permitida. O voo ainda não decolou (Status atual: " + v.getStatus() + ").");
+            return false;
+        }
+
+        listaVoos.remove(v);
+        System.out.println("Sucesso: Voo " + v.getNumero() + " excluído do sistema.");
+        return true;
+    }
+
+    // 5.6 Consultar um voo específico
+    public void consultarEspecifico(String numero) {
+        Voo v = buscarVoo(numero);
+        if (v == null) {
+            System.out.println("Erro: Voo não encontrado.");
+            return;
+        }
+
+        System.out.println("\n----------------------------------------");
+        System.out.println("           DETALHES DO VOO              ");
+        System.out.println("----------------------------------------");
+        System.out.println("Número do Voo       : " + v.getNumero());
+        System.out.println("Companhia Aérea     : " + v.getCompanhia());
+        System.out.println("Horário de Embarque : " + v.getHorarioEmbarque());
+        System.out.println("Horário de Saída    : " + v.getHorarioSaida());
+        System.out.println("Destino             : " + v.getDestino());
+        System.out.println("Status Atual        : " + v.getStatus());
+        System.out.println("----------------------------------------");
+    }
 }

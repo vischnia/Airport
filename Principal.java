@@ -101,6 +101,40 @@ public class Principal {
                         System.out.println("Operação cancelada.");
                     }
                     break;
+                case 5:
+                    System.out.println("\n--- 5. EXCLUIR VOO ---");
+                    System.out.print("Informe o número do voo que deseja excluir: ");
+                    String numExc = sc.nextLine();
+                    
+                    Voo vExc = painel.buscarVoo(numExc);
+                    if (vExc == null) {
+                        System.out.println("Erro: Voo não encontrado.");
+                        break;
+                    }
+                    if (!vExc.getStatus().equalsIgnoreCase("DECOLOU")) {
+                        System.out.println("Erro: Exclusão negada. O voo ainda não decolou (Status atual: " + vExc.getStatus() + ").");
+                        break;
+                    }
+
+                    System.out.print("Tem certeza que deseja excluir o voo " + vExc.getNumero() + "? (S/N): ");
+                    String confirmaExc = sc.nextLine();
+
+                    if (confirmaExc.equalsIgnoreCase("S")) {
+                        painel.excluirVoo(numExc);
+                    } else {
+                        System.out.println("Operação cancelada.");
+                    }
+                    break;
+                case 6:
+                    System.out.println("\n--- 6. CONSULTAR VOO ESPECÍFICO ---");
+                    System.out.print("Informe o número do voo: ");
+                    String numCons = sc.nextLine();
+                    painel.consultarEspecifico(numCons);
+                    break;
+
+                case 7:
+                    System.out.println("\nEncerrando o sistema!");
+                    break;
             }
         } while (opcao != 7);
         
