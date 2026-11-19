@@ -4,7 +4,7 @@ public class Principal {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
         PainelAeroporto painel = new PainelAeroporto();
-        int opcao = 0; //Adicionar voos
+        int opcao = 0; // Adiciona voos
 
         do {
             System.out.println("\n========================================");
@@ -21,11 +21,11 @@ public class Principal {
 
             if (sc.hasNextInt()) {
                 opcao = sc.nextInt();
-                sc.nextLine(); // Limpar o buffer do scanner
+                sc.nextLine(); // Limpa o buffer do scanner
             } else {
                 System.out.println("Opção inválida. Por favor, digite um número de 1 a 7.");
-                sc.nextLine(); // Limpar o buffer do scanner
-                continue; // Voltar ao início do loop
+                sc.nextLine(); // Limpa o buffer do scanner
+                continue; // Volta ao início do loop
             }
 
             switch (opcao) {

@@ -14,7 +14,7 @@ public class Voo {
         this.destino = destino;
         this.status = "PREVISTO"; // Status inicial
     }
-    //getters 
+    // Getters 
     public String getNumero() {
         return numero;
     }
@@ -34,7 +34,7 @@ public class Voo {
         return status;
     }
 
-    //setters
+    // Setters
     public void setNumero(String numero) {
         this.numero = numero;
     }

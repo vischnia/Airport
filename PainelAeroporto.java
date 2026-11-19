@@ -32,7 +32,7 @@ public class PainelAeroporto {
         return null;
     }
 
-    // 5.1 Cadastrar novo voo
+    // Cadastrar novo voo
     public boolean cadastrarVoo(String numero, String companhia, String horarioEmbarque, String horarioSaida, String destino) {
         if (numero.isEmpty() || companhia.isEmpty() || horarioEmbarque.isEmpty() || horarioSaida.isEmpty() || destino.isEmpty()) {
             System.out.println("Erro: Todos os campos obrigatórios devem ser preenchidos.");
@@ -56,7 +56,7 @@ public class PainelAeroporto {
         return true;
     }
 
-    // 5.2 Apresentar o painel de voos
+    // Apresentar o painel de voos
     public void exibirPainel() {
         if (listaVoos.isEmpty()) {
             System.out.println("\n--- Painel de Voos Vazio ---");
@@ -81,7 +81,7 @@ public class PainelAeroporto {
         System.out.println("==================================================================================================");
     }
 
-    // 5.3 Alterar informações de um voo
+    // Alterar informações de um voo
     public boolean alterarVoo(String numero, String novaCompanhia, String novoHorarioEmbarque, String novoHorarioSaida, String novoDestino) {
         Voo v = buscarVoo(numero);
         if (v == null) {
@@ -112,7 +112,7 @@ public class PainelAeroporto {
         return true;
     }
 
-    // 5.4 Alterar o status de um voo
+    // Alterar o status de um voo
     public boolean avancarStatusVoo(String numero) {
         Voo v = buscarVoo(numero);
         if (v == null) {
@@ -130,7 +130,7 @@ public class PainelAeroporto {
         System.out.println("Sucesso: Status do voo " + v.getNumero() + " atualizado para: " + proximo);
         return true;
     }
-    // 5.5 Excluir um voo (Apenas se o status for DECOLOU)
+    // Excluir um voo (Apenas se o status for DECOLOU)
     public boolean excluirVoo(String numero) {
         Voo v = buscarVoo(numero);
         if (v == null) {
@@ -148,7 +148,7 @@ public class PainelAeroporto {
         return true;
     }
 
-    // 5.6 Consultar um voo específico
+    // Consultar um voo específico
     public void consultarEspecifico(String numero) {
         Voo v = buscarVoo(numero);
         if (v == null) {
